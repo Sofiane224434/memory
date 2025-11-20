@@ -5,6 +5,8 @@
  * Ce fichier définit la structure HTML commune à toutes les pages.
  * Il inclut dynamiquement le contenu spécifique à chaque vue via la variable $content.
  */
+use App\Helpers\UrlHelper;
+use App\Helpers\LoginHelper;
 ?>
 <!doctype html>
 <html lang="fr">
@@ -26,6 +28,12 @@
   <!-- Menu de navigation global -->
   <nav>
     <a href="/">Accueil</a>
+    <?php if (LoginHelper::isLogged()): ?>
+      <a href="<?= UrlHelper::url('logout') ?>">Se déconnecter</a>
+    <?php else: ?>
+      <a href="<?= UrlHelper::url('register') ?>">S'inscrire</a>
+      <a href="<?= UrlHelper::url('login') ?>">Se connecter</a>
+    <?php endif; ?>
   </nav>
 
   <!-- Contenu principal injecté depuis BaseController -->
