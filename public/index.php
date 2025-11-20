@@ -17,5 +17,9 @@ $router->post('/register', 'App\\Controllers\\AuthController@register');
 $router->get('/login', 'App\\Controllers\\AuthController@showLogin');
 $router->post('/login', 'App\\Controllers\\AuthController@login');
 $router->get('/logout', 'App\\Controllers\\AuthController@logout');
+$router->get('/game', 'App\\Controllers\\GameController@index');
+$router->get('/game/start', 'App\\Controllers\\GameController@startGame');
+$router->get('/game/end', 'App\\Controllers\\GameController@endGame');
 $router->get('/error/404', 'App\\Controllers\\ErrorController@notFound');
+
 $router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
