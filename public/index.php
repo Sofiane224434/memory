@@ -18,8 +18,11 @@ $router->get('/login', 'App\\Controllers\\AuthController@showLogin');
 $router->post('/login', 'App\\Controllers\\AuthController@login');
 $router->get('/logout', 'App\\Controllers\\AuthController@logout');
 $router->get('/game', 'App\\Controllers\\GameController@index');
-$router->get('/game/start', 'App\\Controllers\\GameController@startGame');
-$router->get('/game/end', 'App\\Controllers\\GameController@endGame');
+$router->get('/game/flip', 'App\\Controllers\\GameController@flipCard');
+$router->get('/game/reset', 'App\\Controllers\\GameController@reset');
+$router->get('/game/abandon', 'App\\Controllers\\GameController@abandon');
+$router->get('/game/history', 'App\\Controllers\\GameController@history');
+$router->get('/game/leaderboard', 'App\\Controllers\\GameController@leaderboard');
 $router->get('/error/404', 'App\\Controllers\\ErrorController@notFound');
 
 $router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

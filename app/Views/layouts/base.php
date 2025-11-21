@@ -34,6 +34,10 @@ use App\Helpers\LoginHelper;
           <?php if (LoginHelper::isLogged()): ?>
             <a href="<?= UrlHelper::url('game') ?>"
               class="text-gray-800 hover:text-blue-600 font-medium transition">Jeu</a>
+            <a href="<?= UrlHelper::url('game/history') ?>"
+              class="text-gray-800 hover:text-purple-600 font-medium transition">📜 Mon historique</a>
+            <a href="<?= UrlHelper::url('game/leaderboard') ?>"
+              class="text-gray-800 hover:text-yellow-600 font-medium transition">🏆 Classement</a>
             <a href="<?= UrlHelper::url('logout') ?>" class="text-gray-800 hover:text-red-600 font-medium transition">Se
               déconnecter</a>
           <?php else: ?>
